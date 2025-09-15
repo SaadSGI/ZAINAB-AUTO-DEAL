@@ -1,0 +1,758 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RTO Consultant — Your One-Stop Solution</title>
+  <meta name="description" content="RTO Consultant - DL, PAN, Insurance, HSRP, Fitness, Permits, NOC, Gazette, Gumasta. Borivali East, Mumbai" />
+  <style>
+    :root{--accent:#0ea5e9;--bg:#0b1020;--card:#0f1730;--muted:#a4a8bf;--fg:#f7f7fb}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--fg);-webkit-font-smoothing:antialiased}
+    .container{width:min(1100px,94%);margin:0 auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{font-weight:800;font-size:1.25rem}
+    .brand span{color:var(--accent)}
+    nav a{color:var(--fg);margin-left:14px;text-decoration:none}
+    .hero{display:flex;gap:20px;align-items:center;padding:28px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent)}
+    .hero-left{flex:1}
+    .hero-right{width:320px;background:var(--card);padding:18px;border-radius:12px}
+    h1{margin:0;font-size:2rem}
+    h2{margin-top:0}
+    p.lead{color:var(--muted)}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:var(--accent);color:#042231;font-weight:700;border:none;cursor:pointer}
+    .btn.outline{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--fg)}
+    section{margin-top:28px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .card{background:var(--card);padding:12px;border-radius:10px}
+    .contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    label{display:block;font-weight:700;margin-bottom:6px}
+    input,select,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:#071028;color:var(--fg)}
+    .note{color:var(--muted);font-size:.9rem;margin-top:8px}
+    footer{margin-top:28px;padding:18px 0;border-top:1px solid rgba(255,255,255,0.04);color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+    .small{font-size:.9rem}
+    table{width:100%;border-collapse:collapse;background:var(--card);border-radius:10px;overflow:hidden}
+    th,td{padding:8px;border-bottom:1px solid rgba(255,255,255,0.03);text-align:left;font-size:.95rem}
+    .inline{display:inline-block}
+    .danger{background:#ef4444;color:white}
+    .modal{position:fixed;inset:0;background:rgba(0,0,0,0.6);display:flex;align-items:center;justify-content:center;padding:20px;z-index:60}
+    .modal-card{width:100%;max-width:720px;background:#071028;padding:18px;border-radius:12px}
+    .right{display:flex;gap:8px;align-items:center}
+    .service-detail{margin-bottom:24px;background:var(--card);padding:16px;border-radius:10px}
+    .testimonial{background:var(--card);padding:16px;border-radius:10px;margin-bottom:16px}
+    .testimonial-author{font-weight:bold;margin-top:8px}
+    .map-container iframe{width:100%;height:300px;border-radius:10px;border:none}
+    .page{display:none}
+    .page.active{display:block}
+    .ai-assistant {position: fixed; bottom: 20px; right: 20px; z-index: 50;}
+    .ai-button {width: 60px; height: 60px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);}
+    .ai-button img {width: 30px; height: 30px;}
+    .ai-chatbox {position: absolute; bottom: 70px; right: 0; width: 320px; background: var(--card); border-radius: 12px; padding: 16px; display: none; flex-direction: column; box-shadow: 0 10px 25px rgba(0,0,0,0.2);}
+    .ai-header {display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;}
+    .ai-title {font-weight: bold;}
+    .ai-close {cursor: pointer;}
+    .ai-messages {height: 250px; overflow-y: auto; margin-bottom: 12px;}
+    .ai-message {margin-bottom: 10px; padding: 8px 12px; border-radius: 8px; max-width: 85%;}
+    .ai-user {background: rgba(14, 165, 233, 0.2); margin-left: auto;}
+    .ai-bot {background: rgba(255, 255, 255, 0.05);}
+    .ai-input {display: flex; gap: 8px;}
+    .ai-input input {flex: 1; padding: 8px 12px;}
+    .ai-send {background: var(--accent); border: none; border-radius: 8px; padding: 0 12px; cursor: pointer;}
+    @media(max-width:900px){
+      .grid{grid-template-columns:1fr 1fr}
+      .contact-wrap{grid-template-columns:1fr}
+      .hero{flex-direction:column}
+      .hero-right{width:100%}
+      .ai-chatbox {width: 300px; right: 10px;}
+    }
+    @media(max-width:600px){ .grid{grid-template-columns:1fr} h1{font-size:1.6rem} .ai-chatbox {width: 280px;} }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">RTO<span>Consultant</span></div>
+      <nav>
+        <a href="#" data-page="home">Home</a>
+        <a href="#" data-page="services">Services</a>
+        <a href="#" data-page="about">About</a>
+        <a href="#" data-page="contact">Contact</a>
+        <a href="#" data-page="faq">FAQ</a>
+        <a href="#" id="adminBtn" class="btn outline">Admin Login</a>
+      </nav>
+    </header>
+
+    <!-- Home Page -->
+    <div id="home" class="page active">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-left">
+          <h1 id="hero-title">RTO Consultant</h1>
+          <p class="lead">एक कॉल पर समाधान, आपकी हर सरकारी ज़रूरत का।</p>
+          <p class="lead">हम आपके सभी RTO कामों के लिए एक ही जगह पर तेज़ और आसान समाधान प्रदान करते हैं।</p>
+          <div style="margin-top:14px">
+            <a class="btn" href="#" data-page="contact">Enquire Now</a>
+            <a class="btn outline" href="tel:9224385661">Call 9224385661</a>
+          </div>
+          <div style="margin-top:12px;color:var(--muted)">Shop No 2, SV Road, Daulat Nagar, Near Apex Home, Borivali East, Mumbai 400066</div>
+        </div>
+        <div class="hero-right">
+          <h3>Top Services</h3>
+          <ul style="padding-left:18px;margin:8px 0;color:var(--muted)">
+            <li>Driving License (New/Renewal/Duplicate/International)</li>
+            <li>PAN Card (Application & Correction)</li>
+            <li>Insurance • HSRP • Fitness Certificate</li>
+            <li>Permits • NOC Transfer • Gazette • Gumasta</li>
+          </ul>
+          <div style="margin-top:8px">
+            <a class="btn" href="https://wa.me/919224385661" target="_blank" rel="noopener">WhatsApp: 9224385661</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="services-highlight">
+        <h2>Our Services</h2>
+        <div class="grid" aria-hidden="false">
+          <div class="card"><strong>DL</strong><div class="small">New / Renewal / Duplicate / International</div></div>
+          <div class="card"><strong>PAN Card</strong><div class="small">Application & Correction</div></div>
+          <div class="card"><strong>Insurance</strong><div class="small">Vehicle Insurance Assistance</div></div>
+          <div class="card"><strong>HSRP</strong><div class="small">High Security Registration Plate</div></div>
+          <div class="card"><strong>Fitness</strong><div class="small">Vehicle Fitness Certificate</div></div>
+          <div class="card"><strong>Permits</strong><div class="small">All vehicle permit types</div></div>
+          <div class="card"><strong>NOC Transfer</strong><div class="small">No Objection Certificate & Transfer</div></div>
+          <div class="card"><strong>Gazette</strong><div class="small">Name change & official publications</div></div>
+          <div class="card"><strong>Gumasta</strong><div class="small">Shop & Establishment registration</div></div>
+        </div>
+      </section>
+
+      <!-- Feedback Section on Home Page -->
+      <section id="public-feedback">
+        <h2>Customer Feedback</h2>
+        <div id="feedbackDisplay">
+          <!-- Feedback will be loaded here by JavaScript -->
+        </div>
+      </section>
+    </div>
+
+    <!-- Services Page -->
+    <div id="services" class="page">
+      <h2>Our Services</h2>
+      
+      <div class="service-detail">
+        <h3>Driving License (DL)</h3>
+        <p>We assist with all types of driving license services including new applications, renewals, duplicates, and international driving permits.</p>
+        <p><strong>Required Documents:</strong> Aadhaar Card, Passport Size Photos, Medical Certificate (Form 1A), Address Proof</p>
+        <p><strong>Process:</strong> Enquiry → Documents Collection → Slot Booking → Driving Test → License Issuance</p>
+      </div>
+      
+      <div class="service-detail">
+        <h3>PAN Card</h3>
+        <p>Get your PAN card application processed quickly or make corrections to existing PAN details.</p>
+        <p><strong>Required Documents:</strong> Aadhaar Card, Passport Size Photo, Proof of Address, Proof of Identity</p>
+        <p><strong>Process:</strong> Form Submission → Document Verification → Application Processing → PAN Card Delivery</p>
+      </div>
+      
+      <div class="service-detail">
+        <h3>Insurance</h3>
+        <p>Vehicle insurance assistance for all types of vehicles with best premium rates.</p>
+        <p><strong>Required Documents:</strong> Vehicle RC, Previous Insurance (if any), Owner ID Proof</p>
+        <p><strong>Process:</strong> Requirement Analysis → Quote Comparison → Policy Selection → Documentation → Policy Issuance</p>
+      </div>
+      
+      <div class="service-detail">
+        <h3>HSRP (High Security Registration Plate)</h3>
+        <p>Get HSRP plates for your vehicle as per government regulations.</p>
+        <p><strong>Required Documents:</strong> Vehicle RC, Owner ID Proof, Address Proof</p>
+        <p><strong>Process:</strong> Application → Slot Booking → Plate Fitting → Verification</p>
+      </div>
+      
+      <div class="service-detail">
+        <h3>Fitness Certificate</h3>
+        <p>Get fitness certification for your commercial vehicles and transport vehicles.</p>
+        <p><strong>Required Documents:</strong> Vehicle RC, Insurance, Pollution Certificate, Tax Receipt</p>
+        <p><strong>Process:</strong> Application → Vehicle Inspection → Certificate Issuance</p>
+      </div>
+      
+      <div class="service-detail">
+        <h3>Permits</h3>
+        <p>Assistance with all types of vehicle permits required for commercial operations.</p>
+        <p><strong>Required Documents:</strong> Vehicle RC, Insurance, Fitness Certificate, Owner Documents</p>
+        <p><strong>Process:</strong> Requirement Analysis → Application → Documentation → Approval → Permit Issuance</p>
+      </div>
+      
+      <div class="service-detail">
+        <h3>NOC Transfer</h3>
+        <p>No Objection Certificate for vehicle transfer between states.</p>
+        <p><strong>Required Documents:</strong> Vehicle RC, Insurance, Address Proof, NOC Application Form</p>
+        <p><strong>Process:</strong> Application → Verification → Tax Clearance → NOC Issuance</p>
+      </div>
+      
+      <div class="service-detail">
+        <h3>Gazette</h3>
+        <p>Name change and other official publications in government gazette.</p>
+        <p><strong>Required Documents:</strong> Affidavit, Identity Proof, Newspaper Publication, Application Form</p>
+        <p><strong>Process:</strong> Document Preparation → Newspaper Publication → Gazette Application → Publication</p>
+      </div>
+      
+      <div class="service-detail">
+        <h3>Gumasta</h3>
+        <p>Shop and establishment registration for businesses.</p>
+        <p><strong>Required Documents:</strong> Address Proof, ID Proof, Business Details, Premises Photos</p>
+        <p><strong>Process:</strong> Application → Document Submission → Inspection → Certificate Issuance</p>
+      </div>
+    </div>
+
+    <!-- About Us Page -->
+    <div id="about" class="page">
+      <h2>About Us</h2>
+      
+      <div class="card">
+        <h3>Owner: Nizam Iraqi</h3>
+        <p>हमने RTO Consultancy इसलिए शुरू की ताकि लोगों को लाइसेंस, गाड़ी का रजिस्ट्रेशन, बीमा और दूसरे कामों में समय और परेशानी से बचाया जा सके।</p>
+        <p>With several years of experience in RTO-related procedures, we understand the complexities and challenges people face when dealing with government documentation.</p>
+      </div>
+      
+      <div class="card" style="margin-top: 20px;">
+        <h3>Our Mission</h3>
+        <p>"Fast & Hassle-Free RTO Solutions at One Place."</p>
+        <p>We strive to simplify all RTO-related processes for our clients, saving them time and effort while ensuring compliance with all regulations.</p>
+      </div>
+      
+      <h3 style="margin-top: 28px;">Testimonials</h3>
+      <div class="testimonial">
+        <p>"RTO Consultant made my driving license process so smooth. I got my license without any hassle. Highly recommended!"</p>
+        <div class="testimonial-author">- Rajesh Sharma, Borivali</div>
+      </div>
+      
+      <div class="testimonial">
+        <p>"I needed to transfer my vehicle from another state. Nizam Bhai handled all the NOC and paperwork efficiently."</p>
+        <div class="testimonial-author">- Priya Patel, Kandivali</div>
+      </div>
+      
+      <div class="testimonial">
+        <p>"Got my HSRP number plate fitted through them. Professional service at reasonable rates."</p>
+        <div class="testimonial-author">- Vikram Singh, Malad</div>
+      </div>
+    </div>
+
+    <!-- Contact Us Page -->
+    <div id="contact" class="page">
+      <h2>Contact Us</h2>
+      <div class="contact-wrap">
+        <div>
+          <h3>Visit / Contact</h3>
+          <p>Shop No 2, SV Road, Daulat Nagar,<br>Near Apex Home, Borivali East,<br>Mumbai 400066</p>
+          <p><strong>Owner:</strong> Nizam Iraqi</p>
+          <p><strong>Mobile:</strong> <a href="tel:9224385661">9224385661</a> / <a href="tel:9867487673">9867487673</a></p>
+          <p><strong>Email:</strong> <a href="mailto:zainabautodeal@gmail.com">zainabautodeal@gmail.com</a></p>
+          <p>
+            <a class="btn outline" href="https://maps.app.goo.gl/9k17dkAmrUendTJX8" target="_blank" rel="noopener">Open Google Maps</a>
+            <a class="btn" href="https://wa.me/919224385661" target="_blank" rel="noopener">WhatsApp</a>
+          </p>
+          
+          <div class="map-container" style="margin-top: 20px;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.258035220052!2d72.8607220749929!3d19.230382982024887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b0dbfc9bb98d%3A0x4f6f1bceb3c0b5e5!2sBorivali%20East%2C%20Mumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1714567890123!5m2!1sen!2sin" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <div>
+          <h3>Quick Enquiry</h3>
+          <form id="leadForm">
+            <label>Name*<input id="name" name="name" required placeholder="Your full name"></label>
+            <label>Phone*<input id="phone" name="phone" required placeholder="Mobile number"></label>
+            <label>Service
+              <select id="service" name="service">
+                <option value="">Choose a service</option>
+                <option>Driving License</option>
+                <option>PAN Card</option>
+                <option>Insurance</option>
+                <option>HSRP</option>
+                <option>Fitness</option>
+                <option>Permit</option>
+                <option>NOC Transfer</option>
+                <option>Gazette</option>
+                <option>Gumasta</option>
+              </select>
+            </label>
+            <label>Message
+              <textarea id="message" name="message" rows="3" placeholder="How can we help?"></textarea>
+            </label>
+            <div style="display:flex;gap:8px;margin-top:8px;align-items:center">
+              <button class="btn" type="submit">Submit Enquiry</button>
+              <button type="button" id="mailtoBtn" class="btn outline">Send Email</button>
+            </div>
+            <div class="note">By submitting you agree to be contacted. Submissions saved locally on this device.</div>
+          </form>
+          
+          <h3 style="margin-top: 28px;">Feedback Form</h3>
+          <form id="feedbackForm">
+            <label>Name*<input id="fbName" name="name" required placeholder="Your full name"></label>
+            <label>Phone*<input id="fbPhone" name="phone" required placeholder="Mobile number"></label>
+            <label>Feedback
+              <textarea id="fbMessage" name="message" rows="3" placeholder="Your feedback"></textarea>
+            </label>
+            <div style="display:flex;gap:8px;margin-top:8px;align-items:center">
+              <button class="btn" type="submit">Submit Feedback</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Page -->
+    <div id="faq" class="page">
+      <h2>Frequently Asked Questions</h2>
+      
+      <div class="card">
+        <h3>Driving License Related</h3>
+        
+        <h4>Driving License बनवाने में कितना समय लगता है?</h4>
+        <p>Generally, it takes 15-30 days to get a driving license, depending on slot availability and document verification.</p>
+        
+        <h4>What documents are required for a new driving license?</h4>
+        <p>You need Aadhaar card, passport size photos, address proof, age proof, and medical certificate (for commercial licenses).</p>
+        
+        <h4>Can I renew my driving license online?</h4>
+        <p>Yes, driving license renewal can be done online, but it requires document verification and sometimes a physical visit to the RTO.</p>
+      </div>
+      
+      <div class="card" style="margin-top: 20px;">
+        <h3>Vehicle Registration Related</h3>
+        
+        <h4>Vehicle registration transfer process क्या है?</h4>
+        <p>The process involves obtaining NOC from the original RTO, paying road tax in the new state, and submitting required documents to the new RTO.</p>
+        
+        <h4>What is HSRP and is it mandatory?</h4>
+        <p>HSRP (High Security Registration Plate) is a license plate with security features mandated by the government for all vehicles.</p>
+      </div>
+      
+      <div class="card" style="margin-top: 20px;">
+        <h3>Insurance Related</h3>
+        
+        <h4>Insurance Renewal के लिए कौन से papers चाहिए?</h4>
+        <p>You need your previous insurance policy, vehicle RC, and owner ID proof for insurance renewal.</p>
+        
+        <h4>What is the process for insurance claim?</h4>
+        <p>The process involves informing the insurance company, filing an FIR (if required), vehicle inspection, and document submission.</p>
+      </div>
+      
+      <div class="card" style="margin-top: 20px;">
+        <h3>Other Services</h3>
+        
+        <h4>NOC Transfer का process क्या है?</h4>
+        <p>NOC transfer involves applying for NOC at the original RTO, clearing pending dues, and then submitting documents to the new RTO.</p>
+        
+        <h4>What is Gumasta License?</h4>
+        <p>Gumasta License is a shop and establishment registration required for businesses operating in Maharashtra.</p>
+      </div>
+    </div>
+
+    <footer>
+      <div>© <span id="yr"></span> RTO Consultant • Borivali East, Mumbai</div>
+      <div>Owner: <strong>Nizam Iraqi</strong> • <a href="mailto:zainabautodeal@gmail.com">zainabautodeal@gmail.com</a></div>
+    </footer>
+  </div>
+
+  <!-- AI Assistant -->
+  <div class="ai-assistant">
+    <div class="ai-button" id="aiToggle">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24px" height="24px">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+      </svg>
+    </div>
+    <div class="ai-chatbox" id="aiChatbox">
+      <div class="ai-header">
+        <div class="ai-title">RTO Assistant</div>
+        <div class="ai-close" id="aiClose">✕</div>
+      </div>
+      <div class="ai-messages" id="aiMessages">
+        <div class="ai-message ai-bot">Hello! I'm your RTO assistant. How can I help you today?</div>
+      </div>
+      <div class="ai-input">
+        <input type="text" id="aiInput" placeholder="Ask about RTO services...">
+        <button class="ai-send" id="aiSend">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Admin / Dashboard Modal (hidden until login) -->
+  <div id="modal" style="display:none" class="modal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true">
+      <div id="modalContent">
+        <!-- Content injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Basic client-side site script: leads stored in localStorage as 'rtoLeads'
+    const ADMIN_USER = 'zainabautodeal';
+    const ADMIN_PASS = 'nizamiraqi'; // Updated credentials
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Navigation between pages
+    document.querySelectorAll('nav a[data-page]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const pageId = this.getAttribute('data-page');
+        showPage(pageId);
+      });
+    });
+
+    function showPage(pageId) {
+      // Hide all pages
+      document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+      });
+      
+      // Show the selected page
+      document.getElementById(pageId).classList.add('active');
+      
+      // If home page, load public feedback
+      if (pageId === 'home') {
+        loadPublicFeedback();
+      }
+      
+      // Scroll to top
+      window.scrollTo(0, 0);
+    }
+
+    // Load public feedback on home page
+    function loadPublicFeedback() {
+      const feedbacks = loadFeedback();
+      const feedbackDisplay = document.getElementById('feedbackDisplay');
+      
+      if (feedbacks.length === 0) {
+        feedbackDisplay.innerHTML = '<p>No feedback yet. Be the first to share your experience!</p>';
+        return;
+      }
+      
+      // Show latest 3 feedbacks
+      const latestFeedbacks = feedbacks.slice(0, 3);
+      feedbackDisplay.innerHTML = latestFeedbacks.map(f => `
+        <div class="testimonial">
+          <p>${escapeHtml(f.message || 'No message')}</p>
+          <div class="testimonial-author">- ${escapeHtml(f.name)}</div>
+        </div>
+      `).join('');
+    }
+
+    // Helpers
+    function loadLeads(){
+      try { return JSON.parse(localStorage.getItem('rtoLeads') || '[]'); }
+      catch(e){ return []; }
+    }
+    
+    function loadFeedback(){
+      try { return JSON.parse(localStorage.getItem('rtoFeedback') || '[]'); }
+      catch(e){ return []; }
+    }
+    
+    function saveLeads(arr){ localStorage.setItem('rtoLeads', JSON.stringify(arr)); }
+    function saveFeedback(arr){ localStorage.setItem('rtoFeedback', JSON.stringify(arr)); }
+
+    // Form submit: save lead locally, open thank you and offer WhatsApp
+    document.getElementById('leadForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      if(!name || !phone){ alert('Name and Phone are required'); return; }
+      const service = document.getElementById('service').value;
+      const message = document.getElementById('message').value.trim();
+      const lead = { id: Date.now() + '-' + Math.random().toString(36).slice(2,8), name, phone, service, message, createdAt: new Date().toISOString(), status: 'new' };
+      const leads = loadLeads();
+      leads.unshift(lead);
+      saveLeads(leads);
+      // Offer WhatsApp message
+      const waText = encodeURIComponent(`Hello Nizam, I am ${name}. I need help with ${service || 'a service'}. Phone: ${phone}. ${message}`);
+      if(confirm('Enquiry saved locally. Do you want to open WhatsApp to notify now?')) {
+        window.open('https://wa.me/919224385661?text=' + waText, '_blank');
+      } else {
+        alert('Thank you! We will contact you soon.');
+      }
+      // Clear form
+      document.getElementById('leadForm').reset();
+    });
+
+    // Feedback form submit
+    document.getElementById('feedbackForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = document.getElementById('fbName').value.trim();
+      const phone = document.getElementById('fbPhone').value.trim();
+      if(!name || !phone){ alert('Name and Phone are required'); return; }
+      const message = document.getElementById('fbMessage').value.trim();
+      const feedback = { id: Date.now() + '-' + Math.random().toString(36).slice(2,8), name, phone, message, createdAt: new Date().toISOString() };
+      const feedbacks = loadFeedback();
+      feedbacks.unshift(feedback);
+      saveFeedback(feedbacks);
+      alert('Thank you for your feedback!');
+      // Clear form
+      document.getElementById('feedbackForm').reset();
+    });
+
+    // Mailto quick button
+    document.getElementById('mailtoBtn').addEventListener('click', function(){
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const service = document.getElementById('service').value;
+      const message = document.getElementById('message').value.trim();
+      const subject = encodeURIComponent('RTO Enquiry from ' + (name || 'Website Visitor'));
+      const body = encodeURIComponent(`Name: ${name}\nPhone: ${phone}\nService: ${service}\nMessage: ${message}`);
+      window.location.href = 'mailto:zainabautodeal@gmail.com?subject=' + subject + '&body=' + body;
+    });
+
+    // ADMIN LOGIN modal flow
+    const modal = document.getElementById('modal');
+    const modalContent = document.getElementById('modalContent');
+    document.getElementById('adminBtn').addEventListener('click', openLogin);
+
+    function openLogin(){
+      modal.style.display = 'flex';
+      modal.setAttribute('aria-hidden','false');
+      modalContent.innerHTML = `
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <h3>Admin Login</h3>
+          <div class="right"><button id="closeModal" class="btn outline">Close</button></div>
+        </div>
+        <div style="margin-top:12px">
+          <label>Username<input id="admUser" placeholder="username"></label>
+          <label>Password<input id="admPass" type="password" placeholder="password"></label>
+          <div style="margin-top:10px">
+            <button id="admLoginBtn" class="btn">Login</button>
+            <button id="guestBtn" class="btn outline">View Feedback Only</button>
+          </div>
+        </div>
+      `;
+      document.getElementById('closeModal').onclick = closeModal;
+      document.getElementById('admLoginBtn').onclick = attemptLogin;
+      document.getElementById('guestBtn').onclick = openDashboard.bind(null, false);
+    }
+
+    function closeModal(){ modal.style.display='none'; modal.setAttribute('aria-hidden','true'); modalContent.innerHTML=''; }
+
+    function attemptLogin(){
+      const u = document.getElementById('admUser').value.trim();
+      const p = document.getElementById('admPass').value;
+      if(u === ADMIN_USER && p === ADMIN_PASS){
+        openDashboard(true);
+      } else {
+        alert('Wrong username/password');
+      }
+    }
+
+    // Dashboard view: show leads, allow status change, delete, export CSV
+    function openDashboard(isAdmin){
+      const leads = loadLeads();
+      const feedbacks = loadFeedback();
+      
+      modalContent.innerHTML = `
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <h3>Dashboard ${isAdmin? '(Admin)' : '(Feedback Only)'}</h3>
+          <div class="right">
+            ${isAdmin ? '<button id="exportCsv" class="btn">Export CSV</button>' : ''}
+            <button id="closeDash" class="btn outline">Close</button>
+          </div>
+        </div>
+        
+        <div style="margin-top:12px;">
+          <div style="display:flex;gap:8px;margin-bottom:12px;">
+            ${isAdmin ? `<button class="btn outline active" id="tabLeads">Enquiries (${leads.length})</button>` : ''}
+            <button class="btn outline ${isAdmin ? '' : 'active'}" id="tabFeedback">Feedback (${feedbacks.length})</button>
+          </div>
+          
+          ${isAdmin ? `
+          <div id="leadsSection">
+            ${leads.length === 0 ? '<p>No enquiries yet.</p>' : ''}
+            <table id="leadsTable">
+              <thead><tr><th>When</th><th>Name</th><th>Phone</th><th>Service</th><th>Message</th><th>Status</th><th>Actions</th></tr></thead>
+              <tbody>
+                ${leads.map(l => `<tr data-id="${l.id}">
+                  <td>${(new Date(l.createdAt)).toLocaleString()}</td>
+                  <td>${escapeHtml(l.name)}</td>
+                  <td><a href="tel:${escapeHtml(l.phone)}">${escapeHtml(l.phone)}</a></td>
+                  <td>${escapeHtml(l.service || '-')}</td>
+                  <td>${escapeHtml(l.message || '-')}</td>
+                  <td>
+                    <select class="statusSel"><option value="new" ${l.status==='new'?'selected':''}>New</option><option value="in-progress" ${l.status==='in-progress'?'selected':''}>In Progress</option><option value="done" ${l.status==='done'?'selected':''}>Done</option></select>
+                  </td>
+                  <td><button class="btn danger deleteBtn">Delete</button></td>
+                </tr>`).join('')}
+              </tbody>
+            </table>
+          </div>
+          ` : ''}
+          
+          <div id="feedbackSection" style="${isAdmin ? 'display:none' : ''}">
+            ${feedbacks.length === 0 ? '<p>No feedback yet.</p>' : ''}
+            <table id="feedbackTable">
+              <thead><tr><th>When</th><th>Name</th><th>Phone</th><th>Feedback</th></tr></thead>
+              <tbody>
+                ${feedbacks.map(f => `<tr data-id="${f.id}">
+                  <td>${(new Date(f.createdAt)).toLocaleString()}</td>
+                  <td>${escapeHtml(f.name)}</td>
+                  <td><a href="tel:${escapeHtml(f.phone)}">${escapeHtml(f.phone)}</a></td>
+                  <td>${escapeHtml(f.message || '-')}</td>
+                </tr>`).join('')}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      `;
+      
+      // Tab switching
+      if(isAdmin){
+        document.getElementById('tabLeads').addEventListener('click', function(){
+          this.classList.add('active');
+          document.getElementById('tabFeedback').classList.remove('active');
+          document.getElementById('leadsSection').style.display = 'block';
+          document.getElementById('feedbackSection').style.display = 'none';
+        });
+        document.getElementById('tabFeedback').addEventListener('click', function(){
+          this.classList.add('active');
+          document.getElementById('tabLeads').classList.remove('active');
+          document.getElementById('leadsSection').style.display = 'none';
+          document.getElementById('feedbackSection').style.display = 'block';
+        });
+        
+        // Status change
+        document.querySelectorAll('.statusSel').forEach(sel => {
+          sel.addEventListener('change', function(){
+            const id = this.closest('tr').getAttribute('data-id');
+            const leads = loadLeads();
+            const lead = leads.find(l => l.id === id);
+            if(lead) { lead.status = this.value; saveLeads(leads); }
+          });
+        });
+        
+        // Delete lead
+        document.querySelectorAll('.deleteBtn').forEach(btn => {
+          btn.addEventListener('click', function(){
+            if(!confirm('Delete this enquiry?')) return;
+            const id = this.closest('tr').getAttribute('data-id');
+            let leads = loadLeads();
+            leads = leads.filter(l => l.id !== id);
+            saveLeads(leads);
+            openDashboard(true); // Refresh
+          });
+        });
+        
+        // Export CSV
+        document.getElementById('exportCsv').addEventListener('click', function(){
+          const leads = loadLeads();
+          if(leads.length === 0) { alert('No data to export'); return; }
+          const headers = ['Date', 'Name', 'Phone', 'Service', 'Message', 'Status'];
+          const csvRows = [headers.join(',')];
+          for(const row of leads){
+            const values = [
+              (new Date(row.createdAt)).toLocaleString(),
+              escapeCsv(row.name),
+              escapeCsv(row.phone),
+              escapeCsv(row.service || ''),
+              escapeCsv(row.message || ''),
+              escapeCsv(row.status)
+            ];
+            csvRows.push(values.join(','));
+          }
+          const csvString = csvRows.join('\n');
+          const a = document.createElement('a');
+          a.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csvString);
+          a.target = '_blank';
+          a.download = 'rto-leads-' + (new Date().toISOString().slice(0,10)) + '.csv';
+          a.click();
+        });
+      }
+      
+      document.getElementById('closeDash').onclick = closeModal;
+    }
+
+    // AI Assistant functionality
+    const aiToggle = document.getElementById('aiToggle');
+    const aiChatbox = document.getElementById('aiChatbox');
+    const aiClose = document.getElementById('aiClose');
+    const aiSend = document.getElementById('aiSend');
+    const aiInput = document.getElementById('aiInput');
+    const aiMessages = document.getElementById('aiMessages');
+
+    aiToggle.addEventListener('click', () => {
+      aiChatbox.style.display = aiChatbox.style.display === 'flex' ? 'none' : 'flex';
+    });
+
+    aiClose.addEventListener('click', () => {
+      aiChatbox.style.display = 'none';
+    });
+
+    function addMessage(text, isUser = false) {
+      const messageDiv = document.createElement('div');
+      messageDiv.classList.add('ai-message');
+      messageDiv.classList.add(isUser ? 'ai-user' : 'ai-bot');
+      messageDiv.textContent = text;
+      aiMessages.appendChild(messageDiv);
+      aiMessages.scrollTop = aiMessages.scrollHeight;
+    }
+
+    function handleAiInput() {
+      const text = aiInput.value.trim();
+      if (!text) return;
+      
+      addMessage(text, true);
+      aiInput.value = '';
+      
+      // Simple AI responses based on keywords
+      setTimeout(() => {
+        let response = '';
+        const lowerText = text.toLowerCase();
+        
+        if (lowerText.includes('driving license') || lowerText.includes('dl')) {
+          response = "For Driving License services, we assist with new applications, renewals, duplicates, and international permits. You'll need Aadhaar card, photos, and address proof. Would you like to schedule an appointment?";
+        } else if (lowerText.includes('pan card') || lowerText.includes('pan')) {
+          response = "We help with PAN card applications and corrections. Required documents include Aadhaar card, photos, and identity proof. The process typically takes 7-10 working days.";
+        } else if (lowerText.includes('insurance')) {
+          response = "We provide assistance with vehicle insurance policies. We'll help you find the best rates and coverage options. Please share your vehicle details for a customized quote.";
+        } else if (lowerText.includes('hsrp')) {
+          response = "HSRP (High Security Registration Plate) is mandatory for all vehicles. We can help you get HSRP plates fitted quickly. You'll need your RC book and ID proof.";
+        } else if (lowerText.includes('fitness') || lowerText.includes('certificate')) {
+          response = "Fitness certificates are required for commercial vehicles. We assist with the entire process including application and vehicle inspection.";
+        } else if (lowerText.includes('permit')) {
+          response = "We handle all types of vehicle permits required for commercial operations. The requirements vary based on vehicle type and usage.";
+        } else if (lowerText.includes('noc') || lowerText.includes('transfer')) {
+          response = "For NOC and vehicle transfer between states, we handle the complete paperwork process including tax clearance and registration transfer.";
+        } else if (lowerText.includes('gazette')) {
+          response = "Gazette services include name change publications and other official notifications in the government gazette. This process typically takes 4-6 weeks.";
+        } else if (lowerText.includes('gumasta')) {
+          response = "Gumasta license is required for shop and establishment registration in Maharashtra. We assist with the complete application and documentation process.";
+        } else if (lowerText.includes('timing') || lowerText.includes('time') || lowerText.includes('hour')) {
+          response = "Our working hours are Monday to Saturday, 10:00 AM to 7:00 PM. We're closed on Sundays and public holidays.";
+        } else if (lowerText.includes('address') || lowerText.includes('location') || lowerText.includes('where')) {
+          response = "We're located at: Shop No 2, SV Road, Daulat Nagar, Near Apex Home, Borivali East, Mumbai 400066. Would you like directions?";
+        } else if (lowerText.includes('contact') || lowerText.includes('phone') || lowerText.includes('number')) {
+          response = "You can reach us at 9224385661 or 9867487673. You can also WhatsApp us for quick responses.";
+        } else {
+          response = "Thank you for your message. For detailed information about our RTO services, please specify if you need help with Driving License, PAN Card, Insurance, HSRP, Fitness, Permits, NOC, Gazette, or Gumasta. Alternatively, you can call us at 9224385661 for immediate assistance.";
+        }
+        
+        addMessage(response);
+      }, 600);
+    }
+
+    aiSend.addEventListener('click', handleAiInput);
+    aiInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') handleAiInput();
+    });
+
+    // Utility functions
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+    
+    function escapeCsv(str) {
+      if(!str) return '';
+      if(typeof str !== 'string') str = String(str);
+      if(str.includes(',') || str.includes('"') || str.includes('\n') || str.includes('\r')){
+        return '"' + str.replace(/"/g, '""') + '"';
+      }
+      return str;
+    }
+  </script>
+</body>
+</html>
